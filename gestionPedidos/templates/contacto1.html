@@ -1,0 +1,59 @@
+<html>
+
+ 
+<title> COMBINACIONES </title> 
+<head>
+<body>
+    <h1>Combinaciones {{func}}</h1>
+    <form action="/contacto1/" method="POST">{% csrf_token %}
+        <form action="/contacto/" method="POST">{% csrf_token %}
+          
+            Hora de entrada:<input type="text" name="entra"> 
+            Hora de salida :<input type="text" name="salida"> 
+            Horas libres   :<input type="text" name="libres">  
+            Grupo          :<input type="text" name="grupo">   
+            <!-- <p>Mensaje:<textarea name="mensaje" rows="15" cols="45"></textarea>></p> -->
+            <input type="submit" value="Buscar">
+            
+             
+           
+            <input type="submit" value="Buscar en la anterior lista">
+            </form>
+        </form>
+
+    <!-- <p>Datos ingresados,___Hora de entrada:{{entrada1}}_____Hora de salida: {{entrada2}}_____Horas libres: {{entrada3}}_____Grupo: {{entrada4}} </p> -->
+    <p style="text-align:center;">{{primer}}</p>
+    <div style="text-align:center;">
+    <table border="0" style="margin: 0 auto;" class="default">
+    
+    <!-- <table class="default"> -->
+     {% for x in textoplano %}
+      
+       
+      <tr>
+
+        <td>{{x.0}}</td>
+        <td>{{x.1}}</td>
+        <td>{{x.2}}</td>
+        <td style="text-align:right;">{{x.3}}</td>
+        <td style="text-align:center;">{{x.4}}</td>
+        <td>{{x.5}}</td>
+        <td>{{x.6}}</td>        
+        <td>{{x.7}}</td>
+        <td>{{x.8}}</td>
+        <td>{{x.9}}</td>
+
+      </tr>
+      <!-- <h3>{{x}}</h3> -->
+ 
+     {% endfor %}
+	</table>
+    </div>
+    <!-- <p>{{textoplano}}</p> -->
+    <!--  -->
+    <!-- <p>Se efectuo el cambio</p> -->
+ 
+</body>
+    
+</head>
+</html>
